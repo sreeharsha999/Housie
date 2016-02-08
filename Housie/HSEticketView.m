@@ -30,6 +30,7 @@
 //        AppDelegate *app = [[UIApplication sharedApplication]delegate];
         self.frame = CGRectMake(0, 0, 320, 165);
         self.label = [[UILabel alloc]initWithFrame:CGRectMake(110, 10, self.frame.size.width, 30)];
+        self.label.font = [UIFont systemFontOfSize:16];
         self.label.backgroundColor = [UIColor clearColor];
         self.backgroundColor =  [UIColor clearColor];
         [self addSubview:self.label];
@@ -62,21 +63,22 @@
 - (void)drawRect:(CGRect)rect
 {
     AppDelegate *app = [[UIApplication sharedApplication]delegate];
-    NSArray *linecolor = [app.resources valueForKey:@"ticketLinesColor"];
+    NSArray *linecolor = @[@"0.6",@"1",@"1",@"0.2"];
     //drawing lines in the view
-    int x = 20 ,y = 50,i;
+    int j = 20;//(self.frame.size.width -270)/2;
+    int x = j ,y = 50,i;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGFloat red[4] = {((NSString*)[linecolor objectAtIndex:0]).floatValue, ((NSString*)[linecolor objectAtIndex:1]).floatValue, ((NSString*)[linecolor objectAtIndex:2]).floatValue, ((NSString*)[linecolor objectAtIndex:3]).floatValue};
     CGContextSetStrokeColor(context,red );
     
-    CGContextSetLineWidth(context, 2);
+    CGContextSetLineWidth(context, 1);
     for (i = 0; i<10; i++) {
         CGContextMoveToPoint(context, x, y);
         CGContextAddLineToPoint(context, x, y+105);
         x = x+30;
         
     }
-    x = 20;
+    x = j;
     for (i = 0; i<4; i++) {
         CGContextMoveToPoint(context, x, y);
         CGContextAddLineToPoint(context, x+270, y);
@@ -84,7 +86,7 @@
     }
     
     //draw the nos in the view
-    x = 20;
+    x = j;
     y = 50;
     
     for (NSNumber *temp in ticketNos) {
@@ -97,7 +99,7 @@
         
        
         CGRect viewRect = CGRectMake(x, y, 30, 35);
-        UIFont* font = [UIFont boldSystemFontOfSize:15];
+        UIFont* font = [UIFont systemFontOfSize:14];
         
         CGSize size = [string sizeWithFont:font];   
         float x_pos = (viewRect.size.width - size.width) / 2; 
@@ -105,11 +107,11 @@
         [string drawAtPoint:CGPointMake(viewRect.origin.x + x_pos, viewRect.origin.y + y_pos) withFont:font];
         x = x + 30;
         if (x > 260 && y == 50 ) {
-            x = 20;
+            x = j;
             y = y + 35;
         }
         else if(x > 260 && y == 85){
-            x = 20;
+            x = j;
             y = y+35;
         }
     }

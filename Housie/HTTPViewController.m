@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [Utilities gradientWithStart:[UIColor colorWithRed:0.282 green:0.922 blue:0.729 alpha:1.000] End:[UIColor colorWithRed:0.000 green:0.749 blue:0.976 alpha:1.000] Alpha:1 forView:self.view];
+    [Utilities gradientforViewcontrollerView:self.view];
     NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
     
     httpServer = [HTTPServer new];

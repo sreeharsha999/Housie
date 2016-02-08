@@ -14,39 +14,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-    
-    //Getting resources from resources plist
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"Resources" ofType:@"plist"];
-    self.resources = [[NSDictionary alloc]initWithContentsOfFile:path];
-//    NSArray *colorValues = [self.resources valueForKey:@"appBackGrounColor"];
-    NSArray *navTextColor = [self.resources valueForKey:@"navBarTextColor"];
-//    NSArray *labelColor = [self.resources valueForKey:@"allLabelsColor"];
-    self.backGroundColor = [UIColor colorWithRed:0.094 green:0.294 blue:0.596 alpha:1.000];//[UIColor colorWithRed:((NSString*)[colorValues objectAtIndex:0]).floatValue  green:((NSString*)[colorValues objectAtIndex:1]).floatValue blue:((NSString*)[colorValues objectAtIndex:2]).floatValue alpha:((NSString*)[colorValues objectAtIndex:3]).floatValue];
-//    self.backGroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"canvas.png"]];
-////    self.backGroundColor = [UIColor clearColor];
-//    
-//    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-//    self.viewController.title = @"Housie";
-//    self.navigator = [[ UINavigationController alloc] initWithRootViewController:self.viewController];
-//    UIImage *img = [[UIImage imageNamed:@"navBar.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-//    [[UINavigationBar appearance] setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
-//    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
-////    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0 green:255 blue:255 alpha:0.9]];
-//    UIImage *buttonImage = [[UIImage imageNamed:@"backButton.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 10, 1, 10)];
-//    [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"toolBarButton.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    [[UINavigationBar appearance] setTitleTextAttributes:
-//     [NSDictionary dictionaryWithObjectsAndKeys:
-//      [UIFont fontWithName:[self.resources valueForKey:@"navBarTextFont"] size:0.0],
-//      UITextAttributeFont,[UIColor colorWithRed:((NSString*)[navTextColor objectAtIndex:0]).floatValue green:((NSString*)[navTextColor objectAtIndex:1]).floatValue blue:((NSString*)[navTextColor objectAtIndex:2]).floatValue alpha:((NSString*)[navTextColor objectAtIndex:3]).floatValue],UITextAttributeTextColor,
-//      nil]];
-//    
-//    //UILabel appearence
-////        [[UILabel appearance] setColor:[UIColor colorWithRed:((NSString*)[labelColor objectAtIndex:0]).floatValue green:((NSString*)[labelColor objectAtIndex:1]).floatValue blue:((NSString*)[labelColor objectAtIndex:2]).floatValue alpha:((NSString*)[labelColor objectAtIndex:3]).floatValue]];
-//    
-//    [self.navigator.navigationBar setBarStyle:UIBarStyleBlackOpaque];
-//    self.window.rootViewController = self.navigator;
     [self.window makeKeyAndVisible];
     return YES;
 }

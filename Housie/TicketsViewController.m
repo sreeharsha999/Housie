@@ -34,14 +34,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utilities gradientWithStart:[UIColor colorWithRed:0.282 green:0.922 blue:0.729 alpha:1.000] End:[UIColor colorWithRed:0.000 green:0.749 blue:0.976 alpha:1.000] Alpha:1 forView:self.view];
+    [Utilities gradientforViewcontrollerView:self.view];
     self.ticketsArray = [[NSMutableArray alloc] init];
+    self.ticketsTableView.backgroundColor = [UIColor clearColor];
     if (self.ticketGenerator == nil) {
         
         self.ticketsTableView.hidden = YES;
         self.toolBar.hidden = YES;
-        self.toolBar.tintColor = [UIColor clearColor];
-        [self.toolBar insertSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"toolBar.png"]] atIndex:1];
+        //self.toolBar.tintColor = [UIColor colorWithGradientStyle:UIGradientStyleTopToBottom withFrame:self.toolBar.bounds andColors:@[[UIColor colorWithRed:0.282 green:0.922 blue:0.729 alpha:1.000], [UIColor colorWithRed:0.000 green:0.749 blue:0.976 alpha:1.000]]];
+ //        [self.toolBar insertSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"toolBar.png"]] atIndex:1];
         self.ticketGenerator = [[HGTGenerateTicket alloc]init];
         [self.view bringSubviewToFront:self.toolBar];
         
@@ -70,7 +71,8 @@
         cell = [[HSEticketView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-         [Utilities gradientWithStart:[UIColor colorWithHue:0.09*indexPath.row saturation:1.0 brightness:1.0 alpha:0.9] End:[UIColor colorWithHue:0.09*(indexPath.row +1) saturation:1.0 brightness:1.0 alpha:0.9] Alpha:0.5 forView:cell.contentView];
+        [Utilities setBackGroundColorForView:cell];
+         //[Utilities gradientWithStart:[UIColor colorWithHue:0.09*indexPath.row saturation:1.0 brightness:1.0 alpha:0.9] End:[UIColor colorWithHue:0.09*(indexPath.row +1) saturation:1.0 brightness:1.0 alpha:0.9] Alpha:0.5 forView:cell.contentView];
     }
     [cell Tickets:[self.ticketsArray objectAtIndex:indexPath.row]];
     // Configure the cell...
@@ -108,7 +110,7 @@
 
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 175;
+    return 165;
 }
 
 -(void)background

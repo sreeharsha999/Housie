@@ -107,17 +107,14 @@
     }
     firstRowString = @""; secondRowString = @""; thirdRowString = @""; fastFiveString = @""; lastTenString = @"Latest ten numbers are displayed here";
     appDelegate = [[UIApplication sharedApplication]delegate];
-    [Utilities gradientWithStart:[UIColor colorWithRed:0.282 green:0.922 blue:0.729 alpha:1.000] End:[UIColor colorWithRed:0.000 green:0.749 blue:0.976 alpha:1.000] Alpha:1 forView:self.view];
-    [Utilities gradientWithStart:[UIColor colorWithRed:0.282 green:0.922 blue:0.729 alpha:1.000] End:[UIColor colorWithRed:0.000 green:0.749 blue:0.976 alpha:1.000] Alpha:1 forView:self.self.noDispaly];
-    [Utilities gradientWithStart:[UIColor colorWithRed:0.282 green:0.922 blue:0.729 alpha:1.000] End:[UIColor colorWithRed:0.000 green:0.749 blue:0.976 alpha:1.000] Alpha:1 forView:self.compleations];
+    [Utilities gradientforViewcontrollerView:self.view];
+    [Utilities gradientforViewcontrollerView:self.noDispaly];
+    [Utilities gradientforViewcontrollerView:self.compleations];
 
     self.title = @"Caller";
-    NSArray *labelColors = [appDelegate.resources valueForKey:@"animationDisplayColor"];
-    NSLog(@"%@",labelColors);
-//    self.displayNo.backgroundColor = [UIColor colorWithRed:((NSString*)[labelColors objectAtIndex:0]).floatValue green:((NSString*)[labelColors objectAtIndex:1]).floatValue blue:((NSString*)[labelColors objectAtIndex:2]).floatValue alpha:((NSString*)[labelColors objectAtIndex:3]).floatValue];
     for (UILabel *numbers in self.noDispaly.subviews) {
         numbers.layer.cornerRadius = 3;
-        [Utilities gradientWithStart:[UIColor colorWithRed:0.000 green:0.749 blue:0.976 alpha:1.000] End:[UIColor colorWithRed:0.016 green:0.929 blue:0.737 alpha:1.000] Alpha:0.5 forView:numbers];
+        [Utilities setBackGroundColorForView:numbers];
         [numbers setNeedsDisplay];
     }
     self.displayNo.layer.cornerRadius = 5;
@@ -176,7 +173,6 @@
            table.scrollEnabled = NO;
            table.backgroundView.opaque = YES;
            table.backgroundView = nil;
-           table.backgroundColor = appDelegate.backGroundColor;
            table.separatorColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
            
            //Adding actions to the switches
@@ -372,7 +368,7 @@
             [basic setRepeatCount:2];
             [basic setDuration:0.5];
             [labelTarget.  layer addAnimation:basic forKey:@"transform"];
-            labelTarget.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[appDelegate.resources valueForKey:@"allNoLabelSelectedImage"]]];
+            labelTarget.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"selectedLabel.png"]];
             self.displayNo.frame = labelRect;
             [self diplayTheNoWithAnimation:[generatedNo intValue]];
             [selectedNos addObject:generatedNo];
@@ -464,7 +460,7 @@
             [basic setRepeatCount:2];
             [basic setDuration:0.3];
             [labelTarget.  layer addAnimation:basic forKey:@"transform"];
-            labelTarget.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[appDelegate.resources valueForKey:@"allNoLabelSelectedImage"]]];
+            labelTarget.backgroundColor = [UIColor colorWithPatternImage:@"nonSelected.png"];
             self.displayNo.frame = labelRect;
             [self diplayTheNoWithAnimation:[generatedNo intValue]];
              self.displayNo.text = [NSString stringWithFormat:@"%d",[generatedNo intValue] ];

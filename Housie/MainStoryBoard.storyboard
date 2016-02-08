@@ -37,14 +37,6 @@
                                     <segue destination="ZUs-Wb-b9x" kind="push" id="Zmi-Zg-KOh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="housie.png" translatesAutoresizingMaskIntoConstraints="NO" id="FuZ-Hd-e9a">
-                                <rect key="frame" x="207" y="72" width="186" height="93"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="WUi-fp-38Y"/>
-                                    <constraint firstAttribute="width" constant="186" id="zCg-ec-hdu"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ll-AU-yes">
                                 <rect key="frame" x="225" y="439" width="150" height="60"/>
                                 <animations/>
@@ -70,8 +62,6 @@
                         <constraints>
                             <constraint firstItem="7Ll-AU-yes" firstAttribute="centerX" secondItem="Fr6-cL-fX1" secondAttribute="centerX" id="6Hi-wt-E6l"/>
                             <constraint firstItem="RrW-8T-cAR" firstAttribute="top" secondItem="7Ll-AU-yes" secondAttribute="bottom" constant="101" id="Fo3-ue-cZT"/>
-                            <constraint firstItem="FuZ-Hd-e9a" firstAttribute="centerX" secondItem="Fr6-cL-fX1" secondAttribute="centerX" id="dn4-T4-CRR"/>
-                            <constraint firstItem="FuZ-Hd-e9a" firstAttribute="top" secondItem="kJr-0v-5QY" secondAttribute="bottom" constant="8" id="fSU-Lz-SCJ"/>
                             <constraint firstItem="7Ll-AU-yes" firstAttribute="top" secondItem="P5e-c1-nDl" secondAttribute="bottom" constant="29" id="fhJ-fI-pRX"/>
                             <constraint firstItem="P5e-c1-nDl" firstAttribute="centerX" secondItem="Fr6-cL-fX1" secondAttribute="centerX" id="m7S-iG-97w"/>
                         </constraints>
@@ -102,11 +92,11 @@
                                     <constraint firstAttribute="height" constant="21" id="dys-xK-kWr"/>
                                     <constraint firstAttribute="width" constant="144" id="kBz-WF-py1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="-1" height="-1"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZB8-QI-OEy">
                                 <rect key="frame" x="179" y="78" width="328" height="30"/>
@@ -117,7 +107,7 @@
                                     <action selector="done:" destination="ZUs-Wb-b9x" eventType="editingDidEnd" id="xmD-WV-Hms"/>
                                 </connections>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="fCu-Oi-7Pp">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCu-Oi-7Pp">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -1192,10 +1182,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="tintColor" red="0.84313725490000002" green="0.77647058820000003" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.84313725490196079" green="0.77647058823529413" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1211,6 +1197,5 @@
         <image name="OnlyCaller.png" width="150" height="60"/>
         <image name="PlayButton.png" width="150" height="60"/>
         <image name="button1.png" width="150" height="60"/>
-        <image name="housie.png" width="400" height="216"/>
     </resources>
 </document>

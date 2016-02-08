@@ -10,4 +10,6 @@
 
 @interface Utilities : NSObject
 + (void) gradientWithStart:(UIColor *)startColor End:(UIColor *)endColor Alpha:(float)alpha  forView:(UIView*) view;
++ (void) gradientforViewcontrollerView:(UIView*) view;
++ (void) setBackGroundColorForView:(UIView*)view;
 @end

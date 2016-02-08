@@ -14,10 +14,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
 
-@property (strong, nonatomic) UINavigationController *navigator;
-@property (strong, nonatomic) NSDictionary *resources;
-@property (strong, nonatomic) UIColor *backGroundColor;
 
 @end
