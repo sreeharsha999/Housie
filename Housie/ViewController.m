@@ -11,6 +11,7 @@
 #import "CallerViewController.h"
 #import "AppDelegate.h"
 
+#define GARDIANTSTYLE UIGradientStyleTopToBottom
 @interface ViewController ()
 
 @end
@@ -41,16 +42,16 @@
     [Utilities gradientforViewcontrollerView:self.view];
     self.navigationController.hidesNavigationBarHairline = YES;
     UIView * view = [[UIView alloc] initWithFrame:CGRectMake(-100,100, 75, 75)];
-    view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:view.bounds andColors:@[[UIColor colorWithRed:0.996 green:0.831 blue:0.231 alpha:1.000], [UIColor colorWithRed:0.996 green:0.773 blue:0.039 alpha:1.000]]];
+    view.backgroundColor = [UIColor colorWithGradientStyle:GARDIANTSTYLE withFrame:view.bounds andColors:@[[UIColor colorWithRed:0.996 green:0.831 blue:0.231 alpha:1.000], [UIColor colorWithRed:0.996 green:0.773 blue:0.039 alpha:1.000]]];
     [self addLabelToView:view withText:@"H"];
     //[self addAnimationToView:view];
     UIView * view2 = [[UIView alloc] initWithFrame:CGRectMake(425, 75, 75, 75)];
-    view2.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:view2.bounds andColors:@[[UIColor colorWithRed:0.906 green:0.173 blue:0.655 alpha:1.000], [UIColor colorWithRed:0.714 green:0.094 blue:0.984 alpha:1.000]]];
+    view2.backgroundColor = [UIColor colorWithGradientStyle:GARDIANTSTYLE withFrame:view2.bounds andColors:@[[UIColor colorWithRed:0.906 green:0.173 blue:0.655 alpha:1.000], [UIColor colorWithRed:0.714 green:0.094 blue:0.984 alpha:1.000]]];
    [self addLabelToView:view2 withText:@"U"];
     
     // [self addAnimationToView:view2];
     UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(150, -100, 75, 75)];
-    view1.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:view1.bounds andColors:@[[UIColor colorWithRed:0.984 green:0.271 blue:0.176 alpha:1.000], [UIColor colorWithRed:0.984 green:0.008 blue:0.329 alpha:1.000]]];
+    view1.backgroundColor = [UIColor colorWithGradientStyle:GARDIANTSTYLE withFrame:view1.bounds andColors:@[[UIColor colorWithRed:0.984 green:0.271 blue:0.176 alpha:1.000], [UIColor colorWithRed:0.984 green:0.008 blue:0.329 alpha:1.000]]];
     [self addLabelToView:view1 withText:@"O"];
     
        //[self addAnimationToView:view];
@@ -58,14 +59,14 @@
     
     // [self addAnimationToView:view2];
     UIView * view5 = [[UIView alloc] initWithFrame:CGRectMake(150, -100, 75, 75)];
-    view5.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:view5.bounds andColors:@[[UIColor colorWithRed:0.984 green:0.271 blue:0.176 alpha:1.000], [UIColor colorWithRed:0.984 green:0.008 blue:0.329 alpha:1.000]]];
+    view5.backgroundColor = [UIColor colorWithGradientStyle:GARDIANTSTYLE withFrame:view5.bounds andColors:@[[UIColor colorWithRed:0.984 green:0.271 blue:0.176 alpha:1.000], [UIColor colorWithRed:0.984 green:0.008 blue:0.329 alpha:1.000]]];
     [self addLabelToView:view5 withText:@"I"];
     UIView * view4 = [[UIView alloc] initWithFrame:CGRectMake(-100,100, 75, 75)];
-    view4.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:view4.bounds andColors:@[[UIColor colorWithRed:0.996 green:0.831 blue:0.231 alpha:1.000], [UIColor colorWithRed:0.996 green:0.773 blue:0.039 alpha:1.000]]];
+    view4.backgroundColor = [UIColor colorWithGradientStyle:GARDIANTSTYLE withFrame:view4.bounds andColors:@[[UIColor colorWithRed:0.996 green:0.831 blue:0.231 alpha:1.000], [UIColor colorWithRed:0.996 green:0.773 blue:0.039 alpha:1.000]]];
     [self addLabelToView:view4 withText:@"S"];
 
     UIView * view6 = [[UIView alloc] initWithFrame:CGRectMake(425, 75, 75, 75)];
-    view6.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:view6.bounds andColors:@[[UIColor colorWithRed:0.906 green:0.173 blue:0.655 alpha:1.000], [UIColor colorWithRed:0.714 green:0.094 blue:0.984 alpha:1.000]]];
+    view6.backgroundColor = [UIColor colorWithGradientStyle:GARDIANTSTYLE withFrame:view6.bounds andColors:@[[UIColor colorWithRed:0.906 green:0.173 blue:0.655 alpha:1.000], [UIColor colorWithRed:0.714 green:0.094 blue:0.984 alpha:1.000]]];
     [self addLabelToView:view6 withText:@"E"];
     
     [self.view addSubview:view1];
