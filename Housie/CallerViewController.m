@@ -20,12 +20,12 @@
     CGRect labelRect;
     NSMutableArray *latestTenNos;
     UISwitch *firstRowSwitch, *secondRowSwitch, *thirdRowSwitch, *fastFiveSwitch;
-     UIView *v3;
+    UIView *v3;
     UIView *v4;
     AppDelegate *appDelegate;
     NSString *firstRowString, *secondRowString, *thirdRowString, *fastFiveString,*lastTenString;
     
-
+    
 }
 @property(nonatomic,strong)NSMutableArray *allNoInTickets;
 @end
@@ -53,7 +53,7 @@
 -(void)onlyCaller
 {
     caller = 1;
-   
+    
 }
 
 -(void)prepareDictionary
@@ -93,7 +93,7 @@
     //starting timer and updating and scrolling the text in completions views labels
     
     timer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(UpdateAndScrollLabel) userInfo:nil repeats:YES];
-
+    
 }
 
 #pragma mark vieLifecycle
@@ -110,7 +110,7 @@
     [Utilities gradientforViewcontrollerView:self.view];
     [Utilities gradientforViewcontrollerView:self.noDispaly];
     [Utilities gradientforViewcontrollerView:self.compleations];
-
+    
     self.title = @"Caller";
     for (UILabel *numbers in self.noDispaly.subviews) {
         numbers.layer.cornerRadius = 3;
@@ -143,66 +143,66 @@
     // Do any additional setup after loading the view from its nib.
     self.swipe.direction = UISwipeGestureRecognizerDirectionLeft;
     self.swipR.direction = UISwipeGestureRecognizerDirectionRight;
-       if (caller == 0) {
+    if (caller == 0) {
         
         firstRowTickets = [[NSMutableSet alloc]init];
         secondRowTickets = [[NSMutableSet alloc]init];
         thirdRowTickets = [[NSMutableSet alloc]init];
         fastFiveTickets = [[NSMutableSet alloc]init];
         compleationTickets = [[NSMutableSet alloc]init];
-           v4 = [[UIView alloc]initWithFrame:CGRectMake(290, 194, 30, 40)];
-           
-           v4.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sliderR.png"]];
-           v4.layer.cornerRadius = 0.5;
-           v4.layer.masksToBounds = YES;
-           [self.view addSubview:v4];
-
+        v4 = [[UIView alloc]initWithFrame:CGRectMake(290, 194, 30, 40)];
+        
+        v4.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sliderR.png"]];
+        v4.layer.cornerRadius = 0.5;
+        v4.layer.masksToBounds = YES;
+        [self.view addSubview:v4];
+        
         [self prepareDictionary];
-           
-           // Hiding the labels sothat it wont appear on the main view
-           self.firstLabel.hidden = YES;
-           self.fastLabel.hidden = YES;
-           self.secondLabel.hidden = YES;
-           self.ThirdLabel.hidden = YES;
-           //adding tableview
-           
-           UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(0,-13, self.view.frame.size.width, 200) style:UITableViewStyleGrouped];
-           [self.compleations addSubview:table];
-           table.dataSource = self;
-           table.delegate = self;
-           table.scrollEnabled = NO;
-           table.backgroundView.opaque = YES;
-           table.backgroundView = nil;
-           table.separatorColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
-           
-           //Adding actions to the switches
-           
-           firstRowSwitch = [[UISwitch alloc]init];
-           firstRowSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
-           [firstRowSwitch addTarget:self action:@selector(FirstRowSwith:) forControlEvents:UIControlEventTouchUpInside];
-           firstRowSwitch.on = YES;
-           secondRowSwitch = [[UISwitch alloc]init];
-           secondRowSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
-           [secondRowSwitch addTarget:self action:@selector(SecondRowSwith:) forControlEvents:UIControlEventTouchUpInside];
-           secondRowSwitch.on = YES;
-           thirdRowSwitch = [[UISwitch alloc]init];
-           thirdRowSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
-           [thirdRowSwitch addTarget:self action:@selector(ThirdRowSwith:) forControlEvents:UIControlEventTouchUpInside];
-           thirdRowSwitch.on = YES;
-           fastFiveSwitch = [[UISwitch alloc]init];
-           fastFiveSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
-           [fastFiveSwitch addTarget:self action:@selector(FastFiveSwitch:) forControlEvents:UIControlEventTouchUpInside];
-           fastFiveSwitch.on = YES;
+        
+        // Hiding the labels sothat it wont appear on the main view
+        self.firstLabel.hidden = YES;
+        self.fastLabel.hidden = YES;
+        self.secondLabel.hidden = YES;
+        self.ThirdLabel.hidden = YES;
+        //adding tableview
+        
+        UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(0,-13, self.view.frame.size.width, 200) style:UITableViewStyleGrouped];
+        [self.compleations addSubview:table];
+        table.dataSource = self;
+        table.delegate = self;
+        table.scrollEnabled = NO;
+        table.backgroundView.opaque = YES;
+        table.backgroundView = nil;
+        table.separatorColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
+        
+        //Adding actions to the switches
+        
+        firstRowSwitch = [[UISwitch alloc]init];
+        firstRowSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
+        [firstRowSwitch addTarget:self action:@selector(FirstRowSwith:) forControlEvents:UIControlEventTouchUpInside];
+        firstRowSwitch.on = YES;
+        secondRowSwitch = [[UISwitch alloc]init];
+        secondRowSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
+        [secondRowSwitch addTarget:self action:@selector(SecondRowSwith:) forControlEvents:UIControlEventTouchUpInside];
+        secondRowSwitch.on = YES;
+        thirdRowSwitch = [[UISwitch alloc]init];
+        thirdRowSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
+        [thirdRowSwitch addTarget:self action:@selector(ThirdRowSwith:) forControlEvents:UIControlEventTouchUpInside];
+        thirdRowSwitch.on = YES;
+        fastFiveSwitch = [[UISwitch alloc]init];
+        fastFiveSwitch.onTintColor = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.9];
+        [fastFiveSwitch addTarget:self action:@selector(FastFiveSwitch:) forControlEvents:UIControlEventTouchUpInside];
+        fastFiveSwitch.on = YES;
     }
     self.displayNo.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"anLabel2.png"]];
     
     //configuring iAd banner
     //[[UIScreen mainScreen] bounds].size.height - 150
     self.adBanner.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 64, 320, 50);
-//    [self.view addSubview:self.adBanner];
+    //    [self.view addSubview:self.adBanner];
     self.bannerIsVisible =NO;
-//    self.adBanner.delegate = self;
-//    [self.view bringSubviewToFront:self.adBanner];
+    //    self.adBanner.delegate = self;
+    //    [self.view bringSubviewToFront:self.adBanner];
     
     UIBarButtonItem *homeButton = [[UIBarButtonItem alloc]initWithTitle:@"Home" style:UIBarButtonItemStyleDone target:self action:@selector(home)];
     [homeButton setTitle:@"Home"];
@@ -218,22 +218,22 @@
     }
     else{
         if (compleationTickets.count == 0) {
-          
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"You will loose the present game " delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Home", nil];
-    
-    [alert show];
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"You will loose the present game " delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Home", nil];
+            
+            [alert show];
         }else{
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
-
+        
     }
-    }
+}
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -272,7 +272,7 @@
     self.lastLable.center = CGPointMake(self.lastLable.center.x - 3.5, self.lastLable.center.y);
     if (self.lastLable.frame.origin.x < -(self.lastLable.bounds.size.width/2)) {
         self.lastLable.center = CGPointMake(320 + (self.lastLable.bounds.size.width/2),self.lastLable.center.y);
-    
+        
     }
 }
 -(void)UpdateAndScrollLabel
@@ -324,20 +324,20 @@
     if (allNo.count != 0) {
         if (![audioPlayer isPlaying]) {
             if (caller == 1) {
-                int x = arc4random_uniform(allNo.count);
+                int x = arc4random_uniform((int)allNo.count);
                 generatedNo = [allNo objectAtIndex:x];
                 [allNo removeObjectAtIndex:x];
             }
             else{
                 int x ;
                 if (k%2 == 0 || self.allNoInTickets.count == 0) {
-                    x = arc4random_uniform(allNo.count);
+                    x = arc4random_uniform((int)allNo.count);
                     generatedNo = [allNo objectAtIndex:x];
                     [allNo removeObjectAtIndex:x];
                     [self.allNoInTickets removeObject:generatedNo];
                 }
                 else{
-                    x = arc4random_uniform(self.allNoInTickets.count);
+                    x = arc4random_uniform((int)self.allNoInTickets.count);
                     generatedNo = [self.allNoInTickets objectAtIndex:x];
                     [allNo removeObject:generatedNo];
                     [self.allNoInTickets removeObject:generatedNo];
@@ -354,13 +354,13 @@
             }
             
             UILabel *labelTarget = (UILabel *) [self.noDispaly viewWithTag:[generatedNo intValue]];
-//            [UIView beginAnimations:@"zoom1" context:nil];
-//            [UIView setAnimationDuration:0.8];
-//            CGRect rect = labelTarget.frame;
-//            labelTarget.frame = CGRectMake(labelTarget.frame.origin.x-20,labelTarget.frame.origin.y-20,labelTarget.frame.size.width + 40, labelTarget.frame.size.height+40);
-//            labelTarget.frame = rect;
-//            [UIView setAnimationRepeatAutoreverses:YES];
-//            [UIView commitAnimations];
+            //            [UIView beginAnimations:@"zoom1" context:nil];
+            //            [UIView setAnimationDuration:0.8];
+            //            CGRect rect = labelTarget.frame;
+            //            labelTarget.frame = CGRectMake(labelTarget.frame.origin.x-20,labelTarget.frame.origin.y-20,labelTarget.frame.size.width + 40, labelTarget.frame.size.height+40);
+            //            labelTarget.frame = rect;
+            //            [UIView setAnimationRepeatAutoreverses:YES];
+            //            [UIView commitAnimations];
             [self.noDispaly bringSubviewToFront:labelTarget];
             CABasicAnimation *basic=[CABasicAnimation animationWithKeyPath:@"transform"];
             [basic setToValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(3, 3, 3)]];
@@ -411,20 +411,20 @@
     if (allNo.count != 0) {
         if (![audioPlayer isPlaying]) {
             if (caller == 1) {
-                int x = arc4random_uniform(allNo.count);
+                int x = arc4random_uniform((int)allNo.count);
                 generatedNo = [allNo objectAtIndex:x];
                 [allNo removeObjectAtIndex:x];
             }
             else{
                 int x ;
                 if (k%2 == 0 || self.allNoInTickets.count == 0) {
-                    x = arc4random_uniform(allNo.count);
+                    x = arc4random_uniform((int)allNo.count);
                     generatedNo = [allNo objectAtIndex:x];
                     [allNo removeObjectAtIndex:x];
                     [self.allNoInTickets removeObject:generatedNo];
                 }
                 else{
-                    x = arc4random_uniform(self.allNoInTickets.count);
+                    x = arc4random_uniform((int)self.allNoInTickets.count);
                     generatedNo = [self.allNoInTickets objectAtIndex:x];
                     [allNo removeObject:generatedNo];
                     [self.allNoInTickets removeObject:generatedNo];
@@ -444,15 +444,15 @@
                 
                 lastTenString = [lastTenString stringByAppendingString:[NSString stringWithFormat:@"%@  ",number]];
             }
-
+            
             UILabel *labelTarget = (UILabel *) [self.noDispaly viewWithTag:[generatedNo intValue]];
-//            [UIView beginAnimations:@"zoom1" context:nil];
-//            [UIView setAnimationDuration:0.8];
-//            CGRect rect = labelTarget.frame;
-//            labelTarget.frame = CGRectMake(labelTarget.frame.origin.x-20,labelTarget.frame.origin.y-20,labelTarget.frame.size.width + 40, labelTarget.frame.size.height+40);
-//             labelTarget.frame = rect;
-//            [UIView setAnimationRepeatAutoreverses:YES];
-//            [UIView commitAnimations];
+            //            [UIView beginAnimations:@"zoom1" context:nil];
+            //            [UIView setAnimationDuration:0.8];
+            //            CGRect rect = labelTarget.frame;
+            //            labelTarget.frame = CGRectMake(labelTarget.frame.origin.x-20,labelTarget.frame.origin.y-20,labelTarget.frame.size.width + 40, labelTarget.frame.size.height+40);
+            //             labelTarget.frame = rect;
+            //            [UIView setAnimationRepeatAutoreverses:YES];
+            //            [UIView commitAnimations];
             [self.noDispaly bringSubviewToFront:labelTarget];
             CABasicAnimation *basic=[CABasicAnimation animationWithKeyPath:@"transform"];
             [basic setToValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(3, 3, 3)]];
@@ -460,33 +460,33 @@
             [basic setRepeatCount:2];
             [basic setDuration:0.3];
             [labelTarget.  layer addAnimation:basic forKey:@"transform"];
-            labelTarget.backgroundColor = [UIColor colorWithPatternImage:@"nonSelected.png"];
+            labelTarget.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nonSelected.png"]];
             self.displayNo.frame = labelRect;
             [self diplayTheNoWithAnimation:[generatedNo intValue]];
-             self.displayNo.text = [NSString stringWithFormat:@"%d",[generatedNo intValue] ];
+            self.displayNo.text = [NSString stringWithFormat:@"%d",[generatedNo intValue] ];
             [selectedNos addObject:generatedNo];
             
             NSString * soundFilePath = [[NSBundle mainBundle] pathForResource:[sounds objectAtIndex:[generatedNo intValue]-1]  ofType:@"mp3"];
             
-//           NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:soundFilePath];
+            //           NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:soundFilePath];
             
             NSError *error = nil;
             NSData * data = [ NSData dataWithContentsOfFile:soundFilePath options:NSDataReadingMapped error:&error ] ;
             
             // Create a sound ID,
-//            SystemSoundID myID;
+            //            SystemSoundID myID;
             // Register the sound
-//            AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &myID) ;
+            //            AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &myID) ;
             // Play the sound!
-//            AudioServicesPlaySystemSound(myID);
-        
+            //            AudioServicesPlaySystemSound(myID);
+            
             audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&error];
             if (audioPlayer == nil)
                 NSLog(@"%@",error);
             else
             {
                 [audioPlayer play];
-               
+                
             }
             NSLog(@"%d",[generatedNo intValue]);
             if (caller == 0) {
@@ -518,29 +518,29 @@
         int i = 0;
         for (NSSet *set in temp) {
             if ([set isSubsetOfSet:selectedNos]) {
-//checking which row ticket is it
+                //checking which row ticket is it
                 if (i == 0) {
-//checking wether switch is on or of
+                    //checking wether switch is on or of
                     if (first == 0) {
                         count = 0;
-//checking if the ticket is alredy present in the completed tickets
+                        //checking if the ticket is alredy present in the completed tickets
                         for (NSNumber *num in firstRowTickets) {
                             if (num == no) {
                                 count++;
                             }
                         }
-//if it is not present showing the alert view
+                        //if it is not present showing the alert view
                         if (count == 0) {
-                           
+                            
                             [alerts addObject:[NSString stringWithFormat:@"First row of ticket %@ is completed",no]];
-//                            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Row Completed" message:[NSString stringWithFormat:@"First row of ticket %@ is completed",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//                            [alert show];
+                            //                            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Row Completed" message:[NSString stringWithFormat:@"First row of ticket %@ is completed",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                            //                            [alert show];
                         }
                     }
                     [firstRowTickets addObject:no];
                     firstRowString = @"";
                     for (NSNumber *numb in firstRowTickets) {
-                         firstRowString = [firstRowString stringByAppendingFormat:@"%@  ",numb];
+                        firstRowString = [firstRowString stringByAppendingFormat:@"%@  ",numb];
                     }
                     compleate++;
                 }else if(i == 1){
@@ -554,9 +554,9 @@
                             }
                         }
                         if (count == 0) {
-                           [alerts addObject:[NSString stringWithFormat:@"Second row of ticket %@ is completed",no]];
-//                            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Row Completed" message:[NSString stringWithFormat:@"Second row of ticket %@ is completed",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//                            [alert show];
+                            [alerts addObject:[NSString stringWithFormat:@"Second row of ticket %@ is completed",no]];
+                            //                            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Row Completed" message:[NSString stringWithFormat:@"Second row of ticket %@ is completed",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                            //                            [alert show];
                         }
                     }
                     [secondRowTickets addObject:no];
@@ -564,7 +564,7 @@
                     for (NSNumber *numb in secondRowTickets) {
                         secondRowString = [secondRowString stringByAppendingFormat:@"%@  ",numb];
                     }
-
+                    
                     compleate++;
                     
                 }else if(i == 2){
@@ -578,8 +578,8 @@
                         }
                         if (count == 0) {
                             [alerts addObject:[NSString stringWithFormat:@"Third row of ticket %@ is completed",no]];
-//                            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Row Completed" message:[NSString stringWithFormat:@"Third row of ticket %@ is completed",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//                            [alert show];
+                            //                            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Row Completed" message:[NSString stringWithFormat:@"Third row of ticket %@ is completed",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                            //                            [alert show];
                         }
                     }
                     [thirdRowTickets addObject:no];
@@ -587,7 +587,7 @@
                     for (NSNumber *numb in thirdRowTickets) {
                         thirdRowString = [firstRowString stringByAppendingFormat:@"%@  ",numb];
                     }
-
+                    
                     compleate++;
                 }
             }
@@ -604,8 +604,8 @@
             }
             if (count == 0) {
                 [alerts addObject:[NSString stringWithFormat:@" Ticket %@ has completed housie",no]];
-//                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Housie Completed" message:[NSString stringWithFormat:@" Ticket %@ has completed housie",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-//                [alert show];
+                //                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Housie Completed" message:[NSString stringWithFormat:@" Ticket %@ has completed housie",no] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                //                [alert show];
             }
             
             [compleationTickets addObject:no];
@@ -624,7 +624,7 @@
             thirdRowSwitch.on = NO;
             third = 1;
         }
-
+        
     }
     if (alerts.count != 0) {
         NSString *combinedAllert = @"" ;
@@ -681,7 +681,7 @@
             fastFiveSwitch.on = NO;
             fastFive = 1;
         }
-
+        
     }
 }
 
@@ -702,11 +702,11 @@
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationRepeatAutoreverses:YES];
     [UIView setAnimationRepeatCount:2];
-
+    
     //    CGSize sz = CGSizeMake(self.an.frame.size.width + 100, self.an.frame.size.height+100);
     // Change the text
     
-//    self.displayNo.text = [NSString stringWithFormat:@"%d",no ];
+    //    self.displayNo.text = [NSString stringWithFormat:@"%d",no ];
     self.displayNo.frame = CGRectMake(self.displayNo.frame.origin.x-50,self.displayNo.frame.origin.y-50,self.displayNo.frame.size.width + 100, self.displayNo.frame.size.height+100);
     self.displayNo.font = [UIFont boldSystemFontOfSize:40];
     [UIView commitAnimations];
@@ -722,7 +722,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-   
+    
     startingPoint  = [[touches anyObject] locationInView:self.view];
     NSLog(@"%f  %f",startingPoint.x,startingPoint.y);
     if (CGRectContainsPoint(v3.frame, startingPoint)) {
@@ -820,9 +820,9 @@
     [UIView commitAnimations];
     self.navigationItem.hidesBackButton = NO ;
     if (caller == 0) {
-       v4.frame =  CGRectMake(290, 194, 30, 40);
+        v4.frame =  CGRectMake(290, 194, 30, 40);
     }
-   
+    
     self.title = @"Caller";
     
 }
@@ -863,7 +863,7 @@
 
 - (IBAction)ThirdRowSwith:(UISwitch *)sender {
     if (sender.on) {
-        third = 0; 
+        third = 0;
     }
     else{
         third = 1;
@@ -892,7 +892,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                // Configure the cell...
+        // Configure the cell...
         if (indexPath.row == 0) {
             cell.accessoryView = firstRowSwitch;
             cell.textLabel.text = @"First Row";

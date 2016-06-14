@@ -76,8 +76,8 @@
     }
     [cell Tickets:[self.ticketsArray objectAtIndex:indexPath.row]];
     // Configure the cell...
-   
-    [cell setTicketNo:indexPath.row + 1];
+    int ticketNo = (int)indexPath.row + 1;
+    [cell setTicketNo:ticketNo];
     return cell;
 }
 
@@ -113,12 +113,9 @@
     return 165;
 }
 
--(void)background
-{
-    [self.ticketGenerator GenerateNoOfTickets:[self.enteredNo.text intValue]:self];
-}
 
-- (IBAction)done:(id)sender {
+
+- (IBAction)goAction:(id)sender {
     
     self.title = @"Generating Tickets....";
     if ([self.enteredNo.text isEqualToString:@""] || self.enteredNo.text.intValue == 0 ) {
@@ -132,7 +129,9 @@
         self.label.hidden = YES;
         self.button.hidden = YES;
         self.ticketsTableView.hidden = NO;
-        [self performSelectorInBackground:@selector(background) withObject:nil];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self.ticketGenerator GenerateNoOfTickets:[self.enteredNo.text intValue]:self];
+        });
     }
 }
 

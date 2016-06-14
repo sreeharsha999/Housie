@@ -62,8 +62,8 @@
 - (void)cornerRadiusView:(UIView *)view
 {
     view.layer.cornerRadius = 9;
-    view.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.9].CGColor;
-    view.layer.borderWidth = 4.0;
+    view.layer.borderColor = [UIColor colorWithWhite:0.296 alpha:0.900].CGColor;
+    view.layer.borderWidth = 1.0;
     view.layer.shadowColor = [UIColor whiteColor].CGColor;
     view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     view.layer.shadowOpacity = 1.0f;

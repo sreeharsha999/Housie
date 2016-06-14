@@ -62,7 +62,6 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
     NSArray *linecolor = @[@"0.6",@"1",@"1",@"0.2"];
     //drawing lines in the view
     int j = 20;//(self.frame.size.width -270)/2;
@@ -100,11 +99,11 @@
        
         CGRect viewRect = CGRectMake(x, y, 30, 35);
         UIFont* font = [UIFont systemFontOfSize:14];
-        
-        CGSize size = [string sizeWithFont:font];   
+        NSDictionary *attributes = @{NSFontAttributeName: font};
+        CGSize size = [string sizeWithAttributes:attributes];
         float x_pos = (viewRect.size.width - size.width) / 2; 
-        float y_pos = (viewRect.size.height - size.height) /2; 
-        [string drawAtPoint:CGPointMake(viewRect.origin.x + x_pos, viewRect.origin.y + y_pos) withFont:font];
+        float y_pos = (viewRect.size.height - size.height) /2;
+        [string drawAtPoint:CGPointMake(viewRect.origin.x + x_pos, viewRect.origin.y + y_pos) withAttributes:attributes];
         x = x + 30;
         if (x > 260 && y == 50 ) {
             x = j;

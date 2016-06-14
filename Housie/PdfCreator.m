@@ -107,7 +107,7 @@
                     no = [no stringByAppendingString:@" "];
                 }
             }
-            length = no.length;
+            length = (int)no.length;
             const char* no1 = [no UTF8String];
             CGContextShowTextAtPoint(pdfContext, nox, noy, no1, length);
             if (index == 8 || index == 17 ) {

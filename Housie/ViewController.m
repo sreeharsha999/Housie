@@ -41,6 +41,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [Utilities gradientforViewcontrollerView:self.view];
     self.navigationController.hidesNavigationBarHairline = YES;
+    
     UIView * view = [[UIView alloc] initWithFrame:CGRectMake(-100,100, 75, 75)];
     view.backgroundColor = [UIColor colorWithGradientStyle:GARDIANTSTYLE withFrame:view.bounds andColors:@[[UIColor colorWithRed:0.996 green:0.831 blue:0.231 alpha:1.000], [UIColor colorWithRed:0.996 green:0.773 blue:0.039 alpha:1.000]]];
     [self addLabelToView:view withText:@"H"];
@@ -86,9 +87,19 @@
         [self addAnimationToView:view5];
         [self addAnimationToView:view6];
     }];
-    
-    
+}
 
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    //hide navigationbar
+    self.navigationController.navigationBarHidden = YES;
+
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)addAnimationToView:(UIView*)view
